@@ -6,6 +6,7 @@
  */
 
 import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
@@ -32,7 +33,7 @@ type SectionProps = PropsWithChildren<{
 function Section({children, title}: SectionProps): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   return (
-    <View style={styles.sectionContainer}>
+    <NavigationContainer>
       <Text
         style={[
           styles.sectionTitle,
@@ -51,7 +52,7 @@ function Section({children, title}: SectionProps): JSX.Element {
         ]}>
         {children}
       </Text>
-    </View>
+    </NavigationContainer>
   );
 }
 
