@@ -6,14 +6,13 @@ import {
   DrawerContentComponentProps,
   DrawerContentScrollView,
 } from '@react-navigation/drawer';
-import { SettingsScreen } from '../screens/SettingsScreen';
 import { StackNavigator } from './StackNavigator';
+import { SettingsScreen } from '../screens/SettingsScreen';
 import { styles } from '../theme/appTheme';
 
 const Drawer = createDrawerNavigator();
 
 export const SideMenu = () => {
-
   return (
     <Drawer.Navigator
       useLegacyImplementation={true}
@@ -31,7 +30,7 @@ const Menu = ({ navigation  }: DrawerContentComponentProps ) => {
       <View>
         <Image
           source={{
-            uri: 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
+            uri: 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
           }}
           style={ styles.avatar }
         />
