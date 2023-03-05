@@ -29,4 +29,15 @@ export const styles = StyleSheet.create({
     width: 300,
     height: 100,
   },
+  menuContainer: {
+    marginVertical: 30,
+    marginHorizontal: 50,
+    alignItems: 'center',
+  },
+  menuText: {
+    fontSize: 20,
+  },
+  menuBtn: {
+    marginVertical: 10,
+  },
 });

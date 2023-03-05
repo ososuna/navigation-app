@@ -1,7 +1,11 @@
 /* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
-import { Image, View } from 'react-native';
-import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView } from '@react-navigation/drawer';
+import { Image, View, TouchableOpacity, Text } from 'react-native';
+import {
+  createDrawerNavigator,
+  DrawerContentComponentProps,
+  DrawerContentScrollView,
+} from '@react-navigation/drawer';
 import { SettingsScreen } from '../screens/SettingsScreen';
 import { StackNavigator } from './StackNavigator';
 import { styles } from '../theme/appTheme';
@@ -21,7 +25,7 @@ export const SideMenu = () => {
   );
 };
 
-const Menu = ( _props: DrawerContentComponentProps ) => {
+const Menu = ({ navigation  }: DrawerContentComponentProps ) => {
   return (
     <DrawerContentScrollView>
       <View>
@@ -31,6 +35,20 @@ const Menu = ( _props: DrawerContentComponentProps ) => {
           }}
           style={ styles.avatar }
         />
+      </View>
+      <View style={ styles.menuContainer }>
+        <TouchableOpacity
+          style={ styles.menuBtn }
+          onPress={ () => navigation.navigate('StackNavigator') }
+        >
+          <Text style={ styles.menuText }>Navigation</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={ styles.menuBtn }
+          onPress={ () => navigation.navigate('SettingsScreen') }
+        >
+          <Text style={ styles.menuText }>Settings</Text>
+        </TouchableOpacity>
       </View>
     </DrawerContentScrollView>
   );
