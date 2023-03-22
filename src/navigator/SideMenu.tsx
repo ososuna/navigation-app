@@ -24,7 +24,7 @@ export const SideMenu = () => {
   );
 };
 
-const Menu = ({ navigation  }: DrawerContentComponentProps ) => {
+const Menu = ({ navigation }: DrawerContentComponentProps ) => {
   return (
     <DrawerContentScrollView>
       <View>
