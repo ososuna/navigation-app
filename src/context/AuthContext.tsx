@@ -18,6 +18,7 @@ export interface AuthContextProps {
 export const AuthContext = createContext({} as AuthContextProps);
 
 export const AuthProvider = ({ children }: { children: JSX.Element }) => {
+
   return (
     <AuthContext.Provider value={{
       authState: authInitialState,
