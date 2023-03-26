@@ -1,15 +1,20 @@
-import React, { useEffect } from 'react';
-import { Text, View } from 'react-native';
+import React, { useContext } from 'react';
+import { Button, Text, View } from 'react-native';
+import { AuthContext } from '../context/AuthContext';
+import { styles } from '../theme/appTheme';
 
 export const Tab2Screen = () => {
 
-  useEffect(() => {
-    console.log('Tab2 Screen effect');
-  }, []);
+  const { signIn, authState: { isLoggedIn } } = useContext(AuthContext);
 
   return (
-    <View>
-      <Text>Tab2Screen</Text>
+    <View style={ styles.globalMargin }>
+      <Text style={ styles.title }>Tab2Screen</Text>
+      {
+        (isLoggedIn)
+          ? <Text>You are authenticated</Text>
+          : <Button title="Sign in" onPress={ signIn }/>
+      }
     </View>
   );
 };
